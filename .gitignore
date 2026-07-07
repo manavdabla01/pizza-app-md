@@ -1,0 +1,11 @@
+node_modules/
+.env
+dist/
+pizza-backend/uploads/
+config/ca.pem
+*.pem
+
+*.pem
+*.crt
+*.cert
+*.key

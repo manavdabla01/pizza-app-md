@@ -1,0 +1,30 @@
+{
+  "name": "pizza-ordering-backend",
+  "version": "1.0.0",
+  "description": "Pizza Ordering App backend - Node.js, Express, MySQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^1.41.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "mysql2": "^3.11.0",
+    "razorpay": "^2.9.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "allowScripts": {
+    "razorpay@2.9.6": true,
+    "cloudinary@1.41.3": true,
+    "multer-storage-cloudinary@4.0.0": true
+  }
+}
