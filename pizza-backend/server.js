@@ -34,25 +34,25 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 // Serve uploaded images statically — full URLs are built in controllers via imageUtils
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/api/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Health check (handy once this is deployed)
-app.get('/health', (req, res) => res.status(200).json({ success: true, message: 'API is running' }));
+app.get('/api/health', (req, res) => res.status(200).json({ success: true, message: 'API is running' }));
 
 // PUBLIC ROUTES
-app.use('/users', userRoutes);
-app.use('/pizzas', pizzaRoutes);
-app.use('/cart', cartRoutes);
-app.use('/orders', orderRoutes);
-app.use('/sideitems', sideItemRoutes);
-app.use('/payment', paymentRoutes);
-app.use('/reviews', reviewRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/pizzas', pizzaRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/sideitems', sideItemRoutes);
+app.use('/api/payment', paymentRoutes);
+app.use('/api/reviews', reviewRoutes);
 
 // ADMIN ROUTES
-app.use('/admin', adminOrderRoutes);
-app.use('/admin', adminPizzaRoutes);
-app.use('/admin', adminSideItemRoutes);
-app.use('/admin', adminUserRoutes);
+app.use('/api/admin', adminOrderRoutes);
+app.use('/api/admin', adminPizzaRoutes);
+app.use('/api/admin', adminSideItemRoutes);
+app.use('/api/admin', adminUserRoutes);
 
 // Multer error handler (bad file type / file too large etc.)
 app.use((err, req, res, next) => {
